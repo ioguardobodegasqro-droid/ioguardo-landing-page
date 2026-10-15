@@ -61,7 +61,7 @@ const faqItems = [
   {
     question: "¿Cuál es el horario de acceso?",
     answer:
-      "Lunes a viernes de 9:00 a 18:00 hrs y sábados de 10:00 a 14:00 hrs. Domingos cerrado.",
+      "Contamos con acceso las 24 horas los 7 días de la semana. (24/7)",
   },
   {
     question: "¿Cuál es el plazo mínimo de renta?",
@@ -107,6 +107,7 @@ export default function Home() {
         <Contact />
         <FAQ />
       </div>
+      <WhatsAppButton />
     </div>
   );
 }
@@ -116,10 +117,10 @@ function Header() {
     <header className="flex flex-col gap-4 border-b border-primary/10 pb-6 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex items-center gap-3">
         <Image
-          src="/logo_svg_io_guardo.svg"
+          src="/logo_new.webp"
           alt="logo io guardo"
-          width={200}
-          height={90}
+          width={988}
+          height={365}
           className="h-12 w-auto"
           priority
         />
@@ -511,6 +512,13 @@ function Location() {
               <p className="text-muted">Domingo: Cerrado</p>
             </div>
           </div>
+          <div className="flex items-start gap-3">
+            <KeyIcon className="mt-1 h-5 w-5 shrink-0 text-secondary" />
+            <p className="font-semibold text-primary">Horario de acceso</p>
+            <div>
+              <p className="text-muted">24 horas, 7 días a la semana.</p>
+            </div>
+          </div>
           <a
             href="https://www.google.com/maps/place/20%C2%B039'56.9%22N+100%C2%B017'49.9%22W/@20.6658,-100.297199,17z"
             target="_blank"
@@ -567,6 +575,15 @@ function Contact() {
                   <p className="font-semibold">Horario</p>
                   <p className="text-white/80">
                     L-V 9:00–18:00 · Sáb 10:00–14:00
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <ClockIcon className="mt-1 h-5 w-5 text-secondary" />
+                <div>
+                  <p className="font-semibold">Horario de acceso</p>
+                  <p className="text-white/80">
+                    Contamos con acceso las 24 horas los 7 días de la semana. (24/7)
                   </p>
                 </div>
               </div>
@@ -843,6 +860,60 @@ function ChevronIcon(props: SVGProps<SVGSVGElement>) {
       {...props}
     >
       <path d="M6 9l6 6 6-6" />
+    </svg>
+  );
+}
+function KeyIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      {...props}
+    >
+      <rect x="2" y="10" width="20" height="12" rx="2" />
+      <path d="M6 10V6a6 6 0 0 1 12 0v4" />
+      <line x1="6" x2="6" y1="10" y2="14" />
+      <line x1="18" x2="18" y1="10" y2="14" />
+    </svg>
+  );
+}
+
+function WhatsAppButton() {
+  const whatsappUrl =
+    "https://wa.me/5214422833260?text=" +
+    encodeURIComponent("Hola, quiero conocer más sobre las bodegas");
+
+  return (
+    <aside
+      aria-label="Contacto por WhatsApp"
+      className="fixed bottom-6 right-6 z-50 flex items-center"
+    >
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp: quiero conocer más sobre las bodegas"
+        className="group flex items-center gap-2.5 rounded-full bg-[#25D366] px-4 py-3 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#20ba59] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
+      >
+        <WhatsAppIcon className="h-6 w-6 shrink-0 fill-white" />
+        <span className="text-xs font-semibold tracking-wide sm:text-sm">
+          Quiero conocer más
+        </span>
+      </a>
+    </aside>
+  );
+}
+
+function WhatsAppIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      {...props}
+    >
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.68C7.02 10.88 7.89 12.04 8.01 12.2C8.13 12.37 9.71 14.81 12.14 15.86C14.16 16.73 14.57 16.56 15.01 16.52C15.45 16.48 16.43 15.94 16.63 15.37C16.83 14.81 16.83 14.32 16.77 14.22C16.71 14.12 16.55 14.06 16.3 13.94C16.05 13.82 14.83 13.22 14.6 13.14C14.38 13.06 14.21 13.02 14.05 13.26C13.88 13.51 13.41 14.06 13.27 14.22C13.12 14.39 12.98 14.41 12.73 14.29C12.49 14.16 11.71 13.91 10.78 13.08C10.05 12.43 9.56 11.63 9.42 11.39C9.28 11.14 9.4 11.01 9.53 10.88C9.64 10.77 9.77 10.6 9.89 10.45C10.02 10.31 10.06 10.21 10.14 10.04C10.22 9.88 10.18 9.74 10.12 9.61C10.06 9.49 9.58 8.31 9.38 7.82C9.18 7.35 8.98 7.41 8.83 7.41C8.68 7.4 8.52 7.39 8.53 7.33Z" />
     </svg>
   );
 }

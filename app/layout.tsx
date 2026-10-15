@@ -95,7 +95,7 @@ const jsonLd = {
       name: "io guardo",
       description: SITE_DESCRIPTION,
       url: SITE_URL,
-      logo: `${SITE_URL}/logo_svg_io_guardo.svg`,
+      logo: `${SITE_URL}/logo_new.webp`,
       image: `${SITE_URL}/hero-exterior.webp`,
       telephone: "",
       email: "ioguardoadmon@gmail.com",
