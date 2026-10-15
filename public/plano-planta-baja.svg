@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="1110" viewBox="0 0 620 1110" fill="none">
+  <defs>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FEFFFF"/>
+      <stop offset="1" stop-color="#F6F9FB"/>
+    </linearGradient>
+    <linearGradient id="planSurface" x1="0" y1="0" x2="0" y2="1110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBFCFD"/>
+      <stop offset="1" stop-color="#F2F5F8"/>
+    </linearGradient>
+    <linearGradient id="gradLarge" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2F648E"/>
+      <stop offset="1" stop-color="#0F3A5D"/>
+    </linearGradient>
+    <linearGradient id="gradRegular" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#BACBDA"/>
+      <stop offset="1" stop-color="#99B0C4"/>
+    </linearGradient>
+    <linearGradient id="gradSmall" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F6A247"/>
+      <stop offset="1" stop-color="#EF6C00"/>
+    </linearGradient>
+    <linearGradient id="gradSpecial" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#A7BCCF"/>
+      <stop offset="1" stop-color="#7D9AB4"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0F3A5D" flood-opacity="0.10"/>
+    </filter>
+    <filter id="unitShadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F3A5D" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#cardShadow)">
+    <rect x="12" y="12" width="596" height="1086" rx="24" fill="url(#cardGrad)" stroke="#D9E2E9" stroke-width="1.5"/>
+  </g>
+  <g>
+    <rect x="50" y="42" width="509" height="1038" rx="9" fill="url(#planSurface)" stroke="#0F3A5D" stroke-width="2"/>
+    <rect x="160" y="175" width="270" height="880" rx="10" fill="#FFFFFF" opacity="0.92"/>
+    <rect x="50.0" y="42.0" width="164.0" height="99.0" rx="6" fill="url(#gradLarge)" stroke="#1A4D75" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="227.0" y="42.0" width="44.0" height="99.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="281.0" y="42.0" width="44.0" height="99.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="336.0" y="42.0" width="45.0" height="99.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="392.0" y="42.0" width="165.0" height="99.0" rx="6" fill="url(#gradLarge)" stroke="#1A4D75" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50.0" y="152.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="152.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50.0" y="208.0" width="99.0" height="42.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="208.0" width="99.0" height="42.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="236.0" y="225.0" width="61.0" height="44.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="310.0" y="225.0" width="61.0" height="44.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50.0" y="262.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="262.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="236.0" y="281.0" width="61.0" height="42.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="310.0" y="281.0" width="61.0" height="42.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50.0" y="317.0" width="99.0" height="43.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="317.0" width="99.0" height="43.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="236.0" y="335.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="310.0" y="335.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50.0" y="371.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="371.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="236.0" y="390.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="310.0" y="390.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50.0" y="426.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="426.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="236.0" y="445.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="310.0" y="445.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50.0" y="481.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="481.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="236.0" y="500.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="310.0" y="500.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50.0" y="536.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="536.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="236.0" y="555.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="310.0" y="555.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50.0" y="591.0" width="99.0" height="43.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="591.0" width="99.0" height="43.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="236.0" y="610.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="310.0" y="610.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50.0" y="646.0" width="99.0" height="43.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="646.0" width="99.0" height="43.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="236.0" y="664.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="310.0" y="664.0" width="61.0" height="43.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50.0" y="700.0" width="99.0" height="91.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="700.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="309.0" y="719.0" width="62.0" height="74.0" rx="6" fill="url(#gradSmall)" stroke="#C85F00" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="755.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="810.0" width="99.0" height="43.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="458.0" y="865.0" width="99.0" height="44.0" rx="6" fill="url(#gradRegular)" stroke="#6C879F" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="282.0" y="920.0" width="99.0" height="75.0" rx="6" fill="url(#gradSpecial)" stroke="#5D7D99" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="392.0" y="920.0" width="165.0" height="158.0" rx="6" fill="url(#gradLarge)" stroke="#1A4D75" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="282.0" y="1003.0" width="99.0" height="74.0" rx="6" fill="url(#gradSpecial)" stroke="#5D7D99" stroke-width="1.1" filter="url(#unitShadow)"/>
+    <rect x="50" y="793" width="101" height="122" rx="4" fill="#F3F6F9" stroke="#D6E0E8" stroke-width="1"/>
+    <line x1="60" y1="802" x2="141" y2="802" stroke="#D0D9E1" stroke-width="2"/>
+    <line x1="60" y1="813" x2="141" y2="813" stroke="#D0D9E1" stroke-width="2"/>
+    <line x1="60" y1="824" x2="141" y2="824" stroke="#D0D9E1" stroke-width="2"/>
+    <line x1="60" y1="835" x2="141" y2="835" stroke="#D0D9E1" stroke-width="2"/>
+    <line x1="60" y1="846" x2="141" y2="846" stroke="#D0D9E1" stroke-width="2"/>
+    <line x1="60" y1="857" x2="141" y2="857" stroke="#D0D9E1" stroke-width="2"/>
+    <line x1="60" y1="868" x2="141" y2="868" stroke="#D0D9E1" stroke-width="2"/>
+    <line x1="60" y1="879" x2="141" y2="879" stroke="#D0D9E1" stroke-width="2"/>
+    <line x1="60" y1="890" x2="141" y2="890" stroke="#D0D9E1" stroke-width="2"/>
+    <line x1="60" y1="901" x2="141" y2="901" stroke="#D0D9E1" stroke-width="2"/>
+    <rect x="238" y="715" width="64" height="64" rx="6" fill="#FCFEFF" stroke="#C4D0DB" stroke-width="1.6" stroke-dasharray="6 6"/>
+  </g>
+</svg>

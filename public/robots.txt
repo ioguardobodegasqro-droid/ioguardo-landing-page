@@ -1,0 +1,5 @@
+# robots.txt for ioguardo.mx
+User-agent: *
+Allow: /
+
+Sitemap: https://ioguardo.mx/sitemap.xml

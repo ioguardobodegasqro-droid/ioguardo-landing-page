@@ -1,0 +1,66 @@
+[
+  {
+    "id": "locker",
+    "title": "Locker",
+    "tipo": "C-Locker",
+    "size": "3 m²",
+    "monthlyPrice": 900,
+    "cta": "Cotizar"
+  },
+  {
+    "id": "pequena",
+    "title": "Pequeña",
+    "tipo": "C",
+    "size": "3 m²",
+    "monthlyPrice": 1050,
+    "cta": "Cotizar"
+  },
+  {
+    "id": "mediana",
+    "title": "Mediana",
+    "tipo": "B / C1",
+    "size": "4.5 m²",
+    "monthlyPrice": 1575,
+    "cta": "Cotizar"
+  },
+  {
+    "id": "grande-675",
+    "title": "Grande",
+    "tipo": "B2",
+    "size": "6.75 m²",
+    "monthlyPrice": 2363,
+    "cta": "Cotizar"
+  },
+  {
+    "id": "grande-8",
+    "title": "Grande",
+    "tipo": "B1",
+    "size": "8 m²",
+    "monthlyPrice": 2800,
+    "cta": "Cotizar"
+  },
+  {
+    "id": "extra-grande-145",
+    "title": "Extra Grande",
+    "tipo": "A",
+    "size": "14.5 m²",
+    "monthlyPrice": 5075,
+    "cta": "Cotizar"
+  },
+  {
+    "id": "extra-grande-21",
+    "title": "Extra Grande",
+    "tipo": "A2",
+    "size": "21 m²",
+    "monthlyPrice": 7350,
+    "cta": "Cotizar"
+  },
+  {
+    "id": "extra-grande-225",
+    "title": "Extra Grande",
+    "tipo": "A1",
+    "size": "22.5 m²",
+    "monthlyPrice": 7875,
+    "cta": "Cotizar"
+  }
+]
