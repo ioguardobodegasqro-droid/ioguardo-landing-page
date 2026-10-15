@@ -117,10 +117,10 @@ function Header() {
     <header className="flex flex-col gap-4 border-b border-primary/10 pb-6 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex items-center gap-3">
         <Image
-          src="/logo_new.webp"
+          src="/logo.svg"
           alt="logo io guardo"
-          width={988}
-          height={365}
+          width={411}
+          height={153}
           className="h-12 w-auto"
           priority
         />
@@ -214,6 +214,10 @@ function Benefits() {
   );
 }
 
+function formatPrice(price: number): string {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function StorageSection() {
   return (
     <section className="mt-[var(--section-space)]" id="bodegas">
@@ -238,7 +242,7 @@ function StorageSection() {
             </p>
             <p className="mt-0.5 text-xs text-muted">Tipo {option.tipo} · {option.size}</p>
             <p className="mt-3 text-3xl font-bold text-primary">
-              ${option.monthlyPrice.toLocaleString()}
+              ${formatPrice(option.monthlyPrice)}
               <span className="text-sm font-normal text-muted">/mes</span>
             </p>
             <p className="mt-0.5 text-xs text-muted">+ IVA</p>
@@ -665,7 +669,7 @@ function Contact() {
 
 function FAQ() {
   return (
-    <section className="mt-[var(--section-space)]" id="faq">
+    <section className="mt-(--section-space)" id="faq">
       <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
         Preguntas frecuentes
       </p>

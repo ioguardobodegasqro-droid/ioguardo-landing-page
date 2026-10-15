@@ -25,6 +25,15 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  icons: {
+    icon: [
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/favicon.svg",
+  },
   keywords: [
     "bodegas en Querétaro",
     "mini bodegas Querétaro",
@@ -95,7 +104,7 @@ const jsonLd = {
       name: "io guardo",
       description: SITE_DESCRIPTION,
       url: SITE_URL,
-      logo: `${SITE_URL}/logo_new.webp`,
+      logo: `${SITE_URL}/logo.svg`,
       image: `${SITE_URL}/hero-exterior.webp`,
       telephone: "",
       email: "ioguardoadmon@gmail.com",
