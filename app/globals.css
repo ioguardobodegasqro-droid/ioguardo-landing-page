@@ -27,6 +27,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
 body {
   background: var(--color-surface);
   color: var(--color-foreground);

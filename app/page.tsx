@@ -89,16 +89,11 @@ const faqItems = [
   },
 ];
 
-const legalLinks = [
-  { label: "Aviso de Privacidad", href: "#" },
-  { label: "Términos y Condiciones", href: "#" },
-];
-
 export default function Home() {
   return (
     <div className="bg-surface text-primary" id="inicio">
-      <div className="mx-auto min-h-screen max-w-6xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
-        <Header />
+      <Header />
+      <div className="mx-auto min-h-screen max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
         <Hero />
         <Benefits />
         <StorageSection />
@@ -113,39 +108,134 @@ export default function Home() {
 }
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="flex flex-col gap-4 border-b border-primary/10 pb-6 sm:flex-row sm:items-center sm:justify-between">
-      <div className="flex items-center gap-3">
-        <Image
-          src="/logo.svg"
-          alt="logo io guardo"
-          width={411}
-          height={153}
-          className="h-12 w-auto"
-          priority
-        />
-        <span className="text-xs uppercase tracking-[0.2em] text-muted">
-          Bodegas en Querétaro
-        </span>
-      </div>
-      <nav className="flex flex-wrap items-center gap-4 text-sm font-semibold text-primary">
-        {navLinks.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            className="transition hover:text-secondary"
-          >
-            {link.label}
+    <header className="sticky top-0 z-40 w-full border-b border-primary/10 bg-surface/90 shadow-xs backdrop-blur-md transition-colors">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
+          <a href="#inicio" className="flex items-center gap-3">
+            <Image
+              src="/logo.svg"
+              alt="logo io guardo"
+              width={411}
+              height={153}
+              className="h-9 w-auto sm:h-11"
+              priority
+            />
           </a>
-        ))}
-      </nav>
+          <span className="hidden text-xs uppercase tracking-[0.2em] text-muted sm:inline">
+            Bodegas en Querétaro
+          </span>
+        </div>
+
+        {/* Navegación Desktop */}
+        <nav className="hidden items-center gap-6 text-sm font-semibold text-primary md:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="transition hover:text-secondary"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="https://wa.me/5214422833260?text=Hola,%20quiero%20cotizar%20una%20bodega%20en%20io%20guardo."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-secondary/90"
+          >
+            <WhatsAppIcon className="h-4 w-4 shrink-0 fill-white" />
+            <span>Cotizar</span>
+          </a>
+        </nav>
+
+        {/* Botón Menú Móvil */}
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex h-10 w-10 items-center justify-center rounded-xl border border-primary/15 bg-white/60 text-primary transition hover:bg-white hover:text-secondary focus:outline-none md:hidden"
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isOpen}
+        >
+          {isOpen ? (
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="4" y1="6" x2="20" y2="6" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="18" x2="20" y2="18" />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Menú Desplegable Móvil */}
+      {isOpen && (
+        <div className="border-t border-primary/10 bg-surface/95 px-4 pb-6 pt-3 shadow-xl backdrop-blur-lg md:hidden">
+          <nav className="flex flex-col space-y-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-between rounded-xl px-4 py-3 text-base font-semibold text-primary transition hover:bg-primary/5 hover:text-secondary"
+              >
+                <span>{link.label}</span>
+                <svg
+                  className="h-4 w-4 text-muted/60"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </a>
+            ))}
+          </nav>
+
+          <div className="mt-4 border-t border-primary/10 pt-4">
+            <a
+              href="https://wa.me/5214422833260?text=Hola,%20quiero%20cotizar%20una%20bodega%20en%20io%20guardo."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="flex w-full items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-6 py-3.5 text-center text-sm font-bold text-[#063f1a] shadow-md transition hover:bg-[#20ba59]"
+            >
+              <WhatsAppIcon className="h-5 w-5 fill-[#063f1a]" />
+              <span>Contactar por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
 
 function Hero() {
   return (
-    <section className="grid gap-10 pt-12 lg:grid-cols-2 lg:items-center">
+    <section className="grid gap-10 pt-8 sm:pt-12 lg:grid-cols-2 lg:items-center">
       <div className="space-y-6">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
           Bodegas en Querétaro
@@ -180,7 +270,7 @@ function Hero() {
 
 function Benefits() {
   return (
-    <section className="mt-[var(--section-space)]" id="beneficios">
+    <section className="mt-(--section-space) scroll-mt-24" id="beneficios">
       <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
         ¿Por qué io guardo?
       </p>
@@ -220,7 +310,7 @@ function formatPrice(price: number): string {
 
 function StorageSection() {
   return (
-    <section className="mt-[var(--section-space)]" id="bodegas">
+    <section className="mt-(--section-space) scroll-mt-24" id="bodegas">
       <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
         Bodegas y precios
       </p>
@@ -329,11 +419,11 @@ function PhotoCarousel() {
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {carouselPhotos.map((photo) => (
-            <div key={photo.src} className="w-full flex-shrink-0">
+            <div key={photo.src} className="w-full shrink-0">
               <button
                 type="button"
                 onClick={() => setIsLightboxOpen(true)}
-                className="relative block aspect-[4/3] w-full cursor-zoom-in sm:aspect-[16/10]"
+                className="relative block aspect-4/3 w-full cursor-zoom-in sm:aspect-16/10"
                 aria-label={`Abrir ${photo.alt}`}
               >
                 <Image
@@ -440,7 +530,7 @@ function PhotoCarousel() {
 function FloorPlans() {
   const [floor, setFloor] = useState<"baja" | "alta">("baja");
   return (
-    <section className="mt-[var(--section-space)]" id="planos">
+    <section className="mt-(--section-space) scroll-mt-24" id="planos">
       <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
         Planos
       </p>
@@ -489,7 +579,7 @@ function FloorPlans() {
 
 function Location() {
   return (
-    <section className="mt-[var(--section-space)]" id="ubicacion">
+    <section className="mt-(--section-space) scroll-mt-24" id="ubicacion">
       <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
         Ubicación
       </p>
@@ -508,21 +598,22 @@ function Location() {
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <ClockIcon className="mt-1 h-5 w-5 shrink-0 text-secondary" />
+            <KeyIcon className="mt-1 h-5 w-5 shrink-0 text-secondary" />
             <div>
-              <p className="font-semibold text-primary">Horario de atención</p>
-              <p className="text-muted">Lunes a viernes: 9:00 – 18:00 hrs</p>
-              <p className="text-muted">Sábado: 10:00 – 14:00 hrs</p>
-              <p className="text-muted">Domingo: Cerrado</p>
+              <p className="font-semibold text-primary">Horario de acceso</p>
+              <p className="text-muted">24 horas, 7 días a la semana. Entra cuando lo necesites.</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <KeyIcon className="mt-1 h-5 w-5 shrink-0 text-secondary" />
-            <p className="font-semibold text-primary">Horario de acceso</p>
+            <ClockIcon className="mt-1 h-5 w-5 shrink-0 text-secondary" />
             <div>
-              <p className="text-muted">24 horas, 7 días a la semana.</p>
+              <p className="font-semibold text-primary">Atención a clientes por whatsapp</p>
+              <p className="text-muted">Lunes a viernes: 9:00 – 18:00 hrs</p>
+              <p className="text-muted">Sábado: 10:00 – 14:00 hrs</p>
+              <p className="text-muted">Domingo: sin atención</p>
             </div>
           </div>
+
           <a
             href="https://www.google.com/maps/place/20%C2%B039'56.9%22N+100%C2%B017'49.9%22W/@20.6658,-100.297199,17z"
             target="_blank"
@@ -547,121 +638,169 @@ function Location() {
   );
 }
 
-function Contact() {
+const contactFacilityPhotos = [
+  {
+    src: "/bodegas_photos/DSC_4205.webp",
+    alt: "Pasillo interior con bodegas individuales seguras y numeradas",
+    title: "Bodegas planta baja",
+    subtitle: "Espacios amplios y acceso directo",
+  },
+  {
+    src: "/interior-lockers-wide.webp",
+    alt: "Área de lockers y mini bodegas privadas",
+    title: "Mini bodegas y lockers",
+    subtitle: "Para documentos y objetos personales",
+  },
+  {
+    src: "/bodegas_photos/DSC_4209.webp",
+    alt: "Instalaciones limpias con pasillos amplios para maniobra",
+    title: "Pasillos para maniobra",
+    subtitle: "Comodidad total para carga y descarga",
+  },
+  {
+    src: "/interior-twofloor-wide.webp",
+    alt: "Estructura de dos pisos con escaleras seguras",
+    title: "Estructura dos niveles",
+    subtitle: "Diferentes alturas y tamaños disponibles",
+  },
+  {
+    src: "/location-exterior.webp",
+    alt: "Fachada exterior io guardo en TerraPark Centenario",
+    title: "TerraPark Centenario",
+    subtitle: "Seguridad y vigilancia continua",
+  },
+];
+
+function PhotoAccordion() {
+  const [activeIndex, setActiveIndex] = useState(1);
+
   return (
-    <section className="mt-[var(--section-space)]" id="contacto">
+    <div className="flex flex-col gap-3 md:h-[420px] md:flex-row md:gap-3">
+      {contactFacilityPhotos.map((photo, index) => {
+        const isActive = activeIndex === index;
+        return (
+          <div
+            key={photo.src}
+            role="button"
+            tabIndex={0}
+            onClick={() => setActiveIndex(index)}
+            onMouseEnter={() => setActiveIndex(index)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                setActiveIndex(index);
+              }
+            }}
+            aria-label={`${photo.title}: ${photo.subtitle}`}
+            className={`group relative cursor-pointer overflow-hidden rounded-2xl border border-white/15 bg-white/5 shadow-xl transition-all duration-500 ease-out md:rounded-3xl ${
+              isActive
+                ? "h-72 flex-none md:h-full md:flex-[3.8]"
+                : "h-20 flex-none opacity-80 hover:opacity-100 md:h-full md:flex-1"
+            }`}
+          >
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className={`object-cover transition-all duration-700 ease-out ${
+                isActive ? "scale-105" : "scale-100 filter brightness-90 md:grayscale-20"
+              }`}
+            />
+            {/* Overlay con degradado */}
+            <div
+              className={`absolute inset-0 bg-linear-to-t from-primary/95 via-primary/30 to-transparent transition-opacity duration-500 ${
+                isActive ? "opacity-100" : "opacity-50 group-hover:opacity-75"
+              }`}
+            />
+
+            {/* Información al estar activo o en móvil */}
+            <div
+              className={`absolute bottom-0 left-0 right-0 p-4 transition-all duration-500 md:p-6 ${
+                isActive
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-1 opacity-90 md:translate-y-4 md:opacity-0"
+              }`}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
+                {isActive ? "Instalaciones" : ""}
+              </p>
+              <h3 className="font-heading text-lg font-semibold text-white sm:text-xl">
+                {photo.title}
+              </h3>
+              {isActive && (
+                <p className="mt-1 line-clamp-1 text-xs text-white/80 sm:text-sm">
+                  {photo.subtitle}
+                </p>
+              )}
+            </div>
+
+            {/* Título vertical en desktop cuando está comprimido */}
+            {!isActive && (
+              <div className="absolute inset-0 hidden items-center justify-center p-3 md:flex">
+                <span className="rotate-90 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.25em] text-white/70 drop-shadow transition-colors group-hover:text-white">
+                  {photo.title}
+                </span>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function Contact() {
+  const whatsappUrl =
+    "https://wa.me/5214422833260?text=" +
+    encodeURIComponent("Hola, quiero cotizar una bodega en io guardo.");
+
+  return (
+    <section className="mt-(--section-space) scroll-mt-24" id="contacto">
       <div className="rounded-[40px] bg-primary px-6 py-10 text-white shadow-2xl lg:px-12 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary/70">
-              Hablemos
-            </p>
-            <h2 className="mt-4 font-heading text-3xl font-semibold text-white">
-              Cuéntanos qué necesitas guardar
-            </h2>
-            <p className="mt-3 text-sm text-white/80">
-              Envíanos un mensaje para agendar una visita, solicitar una
-              cotización o resolver cualquier duda.
-            </p>
-            <div className="mt-8 space-y-4 text-sm">
-              <div className="flex items-start gap-3">
-                <LocationIcon className="mt-1 h-5 w-5 text-secondary" />
-                <div>
-                  <p className="font-semibold">Dirección</p>
-                  <p className="text-white/80">
-                    Parque Industrial TerraPark Centenario, Querétaro, México
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <ClockIcon className="mt-1 h-5 w-5 text-secondary" />
-                <div>
-                  <p className="font-semibold">Horario</p>
-                  <p className="text-white/80">
-                    L-V 9:00–18:00 · Sáb 10:00–14:00
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <ClockIcon className="mt-1 h-5 w-5 text-secondary" />
-                <div>
-                  <p className="font-semibold">Horario de acceso</p>
-                  <p className="text-white/80">
-                    Contamos con acceso las 24 horas los 7 días de la semana. (24/7)
-                  </p>
-                </div>
-              </div>
+        {/* Call to action principal en la parte superior */}
+        <div className="mx-auto max-w-2xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
+            <span className="h-2 w-2 rounded-full bg-[#25D366] animate-pulse" />
+            Atención directa e inmediata
+          </div>
+          <h2 className="mt-4 font-heading text-3xl font-semibold leading-tight text-white sm:text-4xl">
+            ¿Listo para cotizar o agendar tu visita? Escríbenos por WhatsApp
+          </h2>
+          <p className="mt-4 text-base text-white/80">
+            Te respondemos al instante para darte disponibilidad, cotización según tus necesidades de espacio o resolver cualquier duda sin compromiso.
+          </p>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3.5 rounded-full bg-[#25D366] px-8 py-4 text-base font-bold text-[#063f1a] shadow-lg shadow-black/20 transition-all duration-300 hover:scale-105 hover:bg-[#20ba59] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
+            >
+              <WhatsAppIcon className="h-8 w-8 shrink-0 fill-[#063f1a]" />
+              <span>Enviar mensaje por WhatsApp</span>
+            </a>
+          </div>
+          <p className="mt-3 text-xs text-white/70">
+            Respuesta en pocos minutos · Tel. +52 442 283 3260
+          </p>
+        </div>
+
+        {/* Acordeón de fotografías en la parte inferior */}
+        <div className="mt-12 border-t border-white/15 pt-8">
+          <div className="mb-5 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-secondary/80">
+                Instalaciones io guardo
+              </p>
+              <p className="text-xs text-white/60">
+                Espacios limpios, seguros y listos para usar
+              </p>
             </div>
           </div>
-          <div>
-            <form
-              action="https://formsubmit.co/ioguardoadmon@gmail.com"
-              method="POST"
-              className="space-y-4"
-            >
-              {/* FormSubmit config */}
-              <input type="hidden" name="_subject" value="Nuevo contacto desde io guardo" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value="https://ioguardo.mx/#contacto" />
-              <input type="text" name="_honey" className="hidden" />
 
-              <label className="block text-sm font-semibold">
-                Nombre completo
-                <input
-                  type="text"
-                  name="nombre"
-                  required
-                  className="mt-2 w-full rounded-2xl border border-white/25 bg-transparent px-4 py-3 text-sm placeholder:text-white/60 focus:border-secondary focus:outline-none"
-                  placeholder="Tu nombre"
-                />
-              </label>
-              <label className="block text-sm font-semibold">
-                Email
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="mt-2 w-full rounded-2xl border border-white/25 bg-transparent px-4 py-3 text-sm placeholder:text-white/60 focus:border-secondary focus:outline-none"
-                  placeholder="tu@email.com"
-                />
-              </label>
-              <label className="block text-sm font-semibold">
-                Teléfono
-                <input
-                  type="tel"
-                  name="telefono"
-                  className="mt-2 w-full rounded-2xl border border-white/25 bg-transparent px-4 py-3 text-sm placeholder:text-white/60 focus:border-secondary focus:outline-none"
-                  placeholder="Tu teléfono"
-                />
-              </label>
-              <label className="block text-sm font-semibold">
-                Tipo de mensaje
-                <select
-                  name="tipo_mensaje"
-                  className="mt-2 w-full rounded-2xl border border-white/25 bg-transparent px-4 py-3 text-sm text-white focus:border-secondary focus:outline-none"
-                >
-                  <option className="text-primary" value="cotizacion">
-                    Quiero una cotización
-                  </option>
-                  <option className="text-primary" value="visita">
-                    Quiero agendar una visita
-                  </option>
-                  <option className="text-primary" value="dudas">
-                    Otras dudas
-                  </option>
-                </select>
-              </label>
-              <button
-                type="submit"
-                className="w-full rounded-full bg-secondary px-4 py-3 text-sm font-semibold uppercase tracking-wide text-primary"
-              >
-                Contáctame
-              </button>
-            </form>
-          </div>
+          <PhotoAccordion />
         </div>
-        <Footer />
       </div>
     </section>
   );
@@ -669,7 +808,7 @@ function Contact() {
 
 function FAQ() {
   return (
-    <section className="mt-(--section-space)" id="faq">
+    <section className="mt-(--section-space) scroll-mt-24" id="faq">
       <p className="text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
         Preguntas frecuentes
       </p>
@@ -715,33 +854,6 @@ function FAQItem({
         </div>
       )}
     </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="mt-12 border-t border-white/20 pt-6 text-sm text-white/80">
-      <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2">
-            <WarehouseIcon className="h-6 w-6 text-secondary" />
-            <span className="font-heading text-lg font-semibold text-white">
-              io guardo
-            </span>
-          </div>
-          <p className="text-xs text-white/60">
-            Parque Industrial TerraPark Centenario, Querétaro, México
-          </p>
-          <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.3em]">
-            {legalLinks.map((link) => (
-              <a key={link.label} href={link.href} className="hover:text-white">
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </footer>
   );
 }
 
@@ -793,21 +905,6 @@ function PinIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function WarehouseIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      {...props}
-    >
-      <path d="M2 10 12 4l10 6" />
-      <path d="M4 10v10h16V10" />
-      <path d="M9 21V9h6v12" />
-    </svg>
-  );
-}
 
 function ShieldIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -874,12 +971,17 @@ function KeyIcon(props: SVGProps<SVGSVGElement>) {
       fill="none"
       stroke="currentColor"
       strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       {...props}
     >
-      <rect x="2" y="10" width="20" height="12" rx="2" />
-      <path d="M6 10V6a6 6 0 0 1 12 0v4" />
-      <line x1="6" x2="6" y1="10" y2="14" />
-      <line x1="18" x2="18" y1="10" y2="14" />
+      {/* Reloj en la cabeza de la llave */}
+      <circle cx="8" cy="8" r="5" />
+      <polyline points="8 5.5 8 8 10 8.5" />
+      {/* Espiga y dientes de la llave de candado */}
+      <path d="M11.5 11.5L20 20" />
+      <path d="M16 16l2-2" />
+      <path d="M18 18l2-2" />
     </svg>
   );
 }
@@ -899,10 +1001,10 @@ function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp: quiero conocer más sobre las bodegas"
-        className="group flex items-center gap-2.5 rounded-full bg-[#25D366] px-4 py-3 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#20ba59] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
+        className="group flex items-center gap-3 rounded-full bg-[#25D366] px-6 py-3.5 text-[#063f1a] shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#20ba59] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
       >
-        <WhatsAppIcon className="h-6 w-6 shrink-0 fill-white" />
-        <span className="text-xs font-semibold tracking-wide sm:text-sm">
+        <WhatsAppIcon className="h-7 w-7 shrink-0 fill-[#063f1a]" />
+        <span className="text-xs font-bold tracking-wide sm:text-sm">
           Quiero conocer más
         </span>
       </a>
