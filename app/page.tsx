@@ -291,14 +291,27 @@ function Benefits() {
           </article>
         ))}
       </div>
-      <div className="mt-8 overflow-hidden rounded-3xl shadow-lg">
-        <Image
-          src="/hero-exterior.webp"
-          alt="Fachada de las instalaciones io guardo en Parque Industrial TerraPark"
-          width={1600}
-          height={1067}
-          className="h-64 w-full object-cover lg:h-96"
-        />
+      <div className="relative mt-10 w-full overflow-hidden rounded-3xl shadow-2xl md:mx-auto md:max-w-[75%] lg:max-w-[70%]">
+        <div className="relative h-72 w-full sm:h-96 lg:h-[440px]">
+          <Image
+            src="/img/fachada.webp"
+            alt="Fachada de las instalaciones io guardo en Parque Industrial TerraPark"
+            fill
+            sizes="(min-width: 1024px) 70vw, (min-width: 768px) 75vw, 100vw"
+            className="object-cover object-center"
+          />
+          {/* Gradiente para armonizar y asegurar legibilidad */}
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+        </div>
+
+        {/* Backdrop con frase inspiradora */}
+        <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:max-w-lg md:max-w-md">
+          <div className="rounded-2xl border border-white/20 bg-primary/80 p-4 shadow-2xl backdrop-blur-md sm:p-5">
+            <p className="font-heading text-base font-semibold leading-snug text-white sm:text-lg">
+              “Más que un espacio de almacenamiento, la extensión segura de tu hogar y negocio.”
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -357,10 +370,15 @@ function StorageSection() {
 }
 
 const carouselPhotos = [
-  { src: "/interior-twofloor-wide.webp", alt: "Estructura de dos pisos con escaleras" },
-  { src: "/interior-lockers-wide.webp", alt: "Pasillo de lockers y bodegas pequeñas numeradas" },
-  { src: "/interior-corridor-wide.webp", alt: "Pasillo de bodegas grandes en planta baja" },
-  { src: "/location-exterior.webp", alt: "Exterior de las instalaciones" },
+  { src: "/slides/slide_01.webp", alt: "Instalaciones y pasillos de bodegas io guardo" },
+  { src: "/slides/slide_02.webp", alt: "Área de bodegas privadas con iluminación y seguridad" },
+  { src: "/slides/slide_03.webp", alt: "Pasillo principal con bodegas de almacenamiento seguro" },
+  { src: "/slides/slide_04.webp", alt: "Instalaciones limpias y modernas en Parque Industrial TerraPark" },
+  { src: "/slides/slide_05.webp", alt: "Módulos y bodegas numeradas para fácil localización" },
+  { src: "/slides/slide_06.webp", alt: "Espacios de almacenamiento amplios y bien ventilados" },
+  { src: "/slides/slide_07.webp", alt: "Pasillos amplios para carga, descarga y maniobra" },
+  { src: "/slides/slide_08.webp", alt: "Estructura segura con acabados de alta calidad" },
+  { src: "/slides/slide_09.webp", alt: "Bodegas y mini bodegas disponibles en io guardo Querétaro" },
 ];
 
 function PhotoCarousel() {
@@ -431,7 +449,7 @@ function PhotoCarousel() {
                   alt={photo.alt}
                   fill
                   sizes="(min-width: 640px) 80vw, 100vw"
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </button>
             </div>
@@ -626,8 +644,8 @@ function Location() {
         </div>
         <div className="overflow-hidden rounded-3xl shadow-lg">
           <Image
-            src="/location-exterior.webp"
-            alt="Vista exterior de las instalaciones io guardo"
+            src="/img/fachada_desde_abajo.webp"
+            alt="Fachada exterior de las instalaciones io guardo vista desde abajo"
             width={1600}
             height={1067}
             className="h-auto w-full object-cover"
@@ -640,39 +658,33 @@ function Location() {
 
 const contactFacilityPhotos = [
   {
-    src: "/bodegas_photos/DSC_4205.webp",
-    alt: "Pasillo interior con bodegas individuales seguras y numeradas",
-    title: "Bodegas planta baja",
-    subtitle: "Espacios amplios y acceso directo",
-  },
-  {
-    src: "/interior-lockers-wide.webp",
-    alt: "Área de lockers y mini bodegas privadas",
+    src: "/img/mini_bodegas.webp",
+    alt: "Módulos de mini bodegas y lockers privados para resguardo de pertenencias",
     title: "Mini bodegas y lockers",
     subtitle: "Para documentos y objetos personales",
   },
   {
-    src: "/bodegas_photos/DSC_4209.webp",
-    alt: "Instalaciones limpias con pasillos amplios para maniobra",
+    src: "/img/pasillos_amplios.webp",
+    alt: "Pasillos amplios e iluminados para fácil maniobra, carga y descarga",
     title: "Pasillos para maniobra",
     subtitle: "Comodidad total para carga y descarga",
   },
   {
-    src: "/interior-twofloor-wide.webp",
-    alt: "Estructura de dos pisos con escaleras seguras",
-    title: "Estructura dos niveles",
-    subtitle: "Diferentes alturas y tamaños disponibles",
+    src: "/img/asensor.webp",
+    alt: "Elevador de carga para acceso cómodo a bodegas en segundo nivel",
+    title: "Acceso con elevador",
+    subtitle: "Acceso ágil y sin esfuerzo a bodegas en segundo nivel",
   },
   {
-    src: "/location-exterior.webp",
-    alt: "Fachada exterior io guardo en TerraPark Centenario",
-    title: "TerraPark Centenario",
-    subtitle: "Seguridad y vigilancia continua",
+    src: "/img/bodegas_amplias.webp",
+    alt: "Almacenes grandes y bodegas de gran capacidad para empresas o mudanzas",
+    title: "Almacenes grandes",
+    subtitle: "Máxima capacidad para inventario, mudanzas y archivo",
   },
 ];
 
 function PhotoAccordion() {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="flex flex-col gap-3 md:h-[420px] md:flex-row md:gap-3">
@@ -721,9 +733,6 @@ function PhotoAccordion() {
                   : "translate-y-1 opacity-90 md:translate-y-4 md:opacity-0"
               }`}
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
-                {isActive ? "Instalaciones" : ""}
-              </p>
               <h3 className="font-heading text-lg font-semibold text-white sm:text-xl">
                 {photo.title}
               </h3>
@@ -788,15 +797,10 @@ function Contact() {
 
         {/* Acordeón de fotografías en la parte inferior */}
         <div className="mt-12 border-t border-white/15 pt-8">
-          <div className="mb-5 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-secondary/80">
-                Instalaciones io guardo
-              </p>
-              <p className="text-xs text-white/60">
-                Espacios limpios, seguros y listos para usar
-              </p>
-            </div>
+          <div className="mb-5">
+            <p className="text-xs uppercase tracking-[0.25em] text-white/70">
+              Espacios limpios, seguros y listos para usar
+            </p>
           </div>
 
           <PhotoAccordion />
