@@ -61,7 +61,7 @@ const faqItems = [
   {
     question: "¿Cuál es el horario de acceso?",
     answer:
-      "Contamos con acceso las 24 horas los 7 días de la semana. (24/7)",
+      "Contamos con acceso las 24 horas los 7 días de la semana.",
   },
   {
     question: "¿Cuál es el plazo mínimo de renta?",
