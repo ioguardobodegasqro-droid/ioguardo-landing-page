@@ -65,7 +65,7 @@ const faqItems = [
   },
   {
     question: "¿Cuál es el plazo mínimo de renta?",
-    answer: "El plazo mínimo de renta es de 3 meses.",
+    answer: "Renta flexible: por día, semana o mes",
   },
   {
     question: "¿Cómo puedo cancelar mi contrato?",
