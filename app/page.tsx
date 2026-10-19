@@ -633,7 +633,7 @@ function Location() {
           </div>
 
           <a
-            href="https://www.google.com/maps/place/20%C2%B039'56.9%22N+100%C2%B017'49.9%22W/@20.6658,-100.297199,17z"
+            href="https://maps.app.goo.gl/GvVQrmLfpfSNqgEL7"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-secondary px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:-translate-y-0.5"
