@@ -50,17 +50,17 @@
   {
     "id": "extra-grande-21",
     "title": "Extra Grande",
-    "tipo": "A2",
-    "size": "21 m²",
-    "monthlyPrice": 7350,
+    "tipo": "A1",
+    "size": "18 m²",
+    "monthlyPrice": 6300,
     "cta": "Cotizar"
   },
   {
     "id": "extra-grande-225",
     "title": "Extra Grande",
-    "tipo": "A1",
-    "size": "22.5 m²",
-    "monthlyPrice": 7875,
+    "tipo": "A2",
+    "size": "25 m²",
+    "monthlyPrice": 8750,
     "cta": "Cotizar"
   }
 ]
